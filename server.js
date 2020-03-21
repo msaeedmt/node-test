@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const {mongoose} = require("./mongoose");
 const {User} = require("./UserSchema");
 
+const port = process.env.PORT || 3000;
 let app = express();
 
 app.use(bodyParser.json());
@@ -89,6 +90,6 @@ function update(req, res, next) {
 }
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Connected to the server...')
 });
